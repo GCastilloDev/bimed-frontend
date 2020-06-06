@@ -8,6 +8,7 @@
 </template>
 
 <script>
+// Importando los mapas de la tienda
 import { mapState, mapMutations } from "vuex";
 
 export default {
