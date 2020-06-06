@@ -14,20 +14,23 @@
                 </p>
                 <span>Usuario</span>
                 <v-text-field
+                  v-model="usuario"
                   outlined
                   color="#00C9BD"
-                  prepend-inner-icon="account_circle"
+                  prepend-inner-icon="mdi-account-heart"
                   placeholder="Ingrese su usuario"
                 ></v-text-field>
                 <span>Contraseña</span>
                 <v-text-field
+                  v-model="contrasena"
+                  type="password"
                   outlined
                   color="#00C9BD"
-                  prepend-inner-icon="lock"
+                  prepend-inner-icon="mdi-lock"
                   placeholder="Ingrese su contraseña"
                 ></v-text-field>
                 <p>
-                  <v-btn depressed block x-large color="#00C9BD" dark>Ingresar</v-btn>
+                  <v-btn @click="ingresar" depressed block x-large color="#00C9BD" dark>Ingresar</v-btn>
                 </p>
                 <p>
                   <v-btn depressed block x-large outlined color="#00C9BD">Registrarse</v-btn>
@@ -46,6 +49,15 @@
 
 <script>
 export default {
-  methods: {}
+  data: () => ({
+    usuario: "",
+    contrasena: 123456,
+    slider: 10
+  }),
+  methods: {
+    ingresar() {
+      this.$router.push({ name: "Medico" });
+    }
+  }
 };
 </script>
